@@ -2,10 +2,14 @@
 	<div class="span6 offset3">
 		<div class="well">
 		<p>
-		 
 		  <%= @instrument.description %>
 		</p>
-		<%= link_to 'Edit', edit_instrument_path(@instrument) %> |
+		<p>
+		  <%= @instrument.user.name %>
+		</p>
+		<% if current_user == @instrument.user %>
+			<%= link_to 'Edit', edit_instrument_path(@instrument) %> |
+		<% end %>
 		<%= link_to 'Back', instruments_path %>
 	</div>
 	</div>
