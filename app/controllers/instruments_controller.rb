@@ -4,7 +4,7 @@ class InstrumentsController < ApplicationController
   # GET /instruments
   # GET /instruments.json
   def index
-    @instruments = Instrument.all
+    @instruments = Instrument.order("created_at desc")
 
     respond_to do |format|
       format.html # index.html.erb
