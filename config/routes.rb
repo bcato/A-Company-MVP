@@ -2,12 +2,15 @@ ClistApp::Application.routes.draw do
   resources :instruments
 
   devise_for :users
+  resources :users, :only => [:show]
 
  # devise_for :installs
 
 get 'about' => 'pages#about'
 
 root :to => 'pages#home'
+
+match 'user/:id' => 'users#show'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
